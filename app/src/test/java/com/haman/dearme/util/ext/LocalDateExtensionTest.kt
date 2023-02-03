@@ -4,6 +4,7 @@ import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 internal class LocalDateExtensionTest {
     @Test
@@ -24,6 +25,18 @@ internal class LocalDateExtensionTest {
         val date = LocalDate.of(2023, 2, 3)
         // 2. When
         val result = date.dayOfWeekText()
+        // 3. Then
+        assertThat(result, `is`("금"))
+    }
+
+    @Test
+    fun getDayOfWeekText_LocalDateTime_returnLocaleDefaultDate() {
+        // 1. Given
+        val time = LocalDateTime.of(
+            2023, 2, 3, 12, 59
+        )
+        // 2. When
+        val result = time.dayOfWeekText()
         // 3. Then
         assertThat(result, `is`("금"))
     }
