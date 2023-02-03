@@ -50,7 +50,7 @@ fun LocalDate.getYearAndMonth(): String {
     val year = this.year
     val month = this.month.value
 
-    return "$year/$month"
+    return "$year/${"%02d".format(month)}"
 }
 
 fun LocalDate.getTime() = this.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
