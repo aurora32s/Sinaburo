@@ -21,16 +21,6 @@ fun LazyListScope.footer(
 ) {
     item {
         Column {
-            AndroidView(
-                modifier = Modifier.fillMaxWidth(),
-                factory = {
-                    AdView(it).apply {
-                        setAdSize(AdSize.SMART_BANNER)
-                        adUnitId = BuildConfig.GOOGLD_AD_BANNER
-//                        adUnitId = "ca-app-pub-3940256099942544/6300978111"
-                        loadAd(AdRequest.Builder().build())
-                    }
-                })
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
