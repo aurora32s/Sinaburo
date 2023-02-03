@@ -36,7 +36,7 @@ fun LocalDateTime.dateFormat(): String {
 
 fun LocalDateTime.timeFormat(): String {
     val formatter: DateTimeFormatter =
-        DateTimeFormatter.ofPattern("a KK:mm", Locale.getDefault())
+        DateTimeFormatter.ofPattern("a hh:mm", Locale.getDefault())
     return this.format(formatter)
 }
 
