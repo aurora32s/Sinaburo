@@ -40,4 +40,16 @@ internal class LocalDateExtensionTest {
         // 3. Then
         assertThat(result, `is`("금"))
     }
+
+    @Test
+    fun getFullTimeFormat_LocalDateTime_returnYYYYMMDDaKKmm() {
+        // 1. Given
+        val time = LocalDateTime.of(
+            2023, 2, 3, 12, 59
+        )
+        // 2. When
+        val result = time.fullTimeFormat()
+        // 3. Then
+        assertThat(result, `is`("2023.02.03 오후 12:59"))
+    }
 }
