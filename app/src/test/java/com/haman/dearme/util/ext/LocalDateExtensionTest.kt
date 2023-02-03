@@ -76,4 +76,14 @@ internal class LocalDateExtensionTest {
         // 3. Then
         assertThat(result, `is`("오후 12:59"))
     }
+
+    @Test
+    fun getLastDate_LocalDate_returnLastDate() {
+        // 1. Given
+        val date = LocalDate.of(2023,1,3)
+        // 2. When
+        val result = date.getLastDate()
+        // 3. Then
+        assertThat(result, `is`(31))
+    }
 }

@@ -40,6 +40,10 @@ fun LocalDateTime.timeFormat(): String {
     return this.format(formatter)
 }
 
+/**
+ * 해당 월의 마지막 날짜 반환
+ * ex. 1월 -> 31
+ */
 fun LocalDate.getLastDate() = this.withDayOfMonth(lengthOfMonth()).dayOfMonth
 
 fun LocalDate.getYearAndMonth(): String {
