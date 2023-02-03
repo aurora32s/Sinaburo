@@ -22,7 +22,7 @@ fun LocalDateTime.dayOfWeekText() =
 
 fun LocalDateTime.fullTimeFormat(): String {
     val formatter: DateTimeFormatter =
-        DateTimeFormatter.ofPattern("yyyy.MM.dd a KK:mm", Locale.KOREA)
+        DateTimeFormatter.ofPattern("yyyy.MM.dd a hh:mm", Locale.getDefault())
     return this.format(formatter)
 }
 
