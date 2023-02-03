@@ -86,4 +86,14 @@ internal class LocalDateExtensionTest {
         // 3. Then
         assertThat(result, `is`(31))
     }
+
+    @Test
+    fun getYearAndMonth_LocalDate_returnYYYYMM() {
+        // 1. Given
+        val date = LocalDate.of(2023,1,3)
+        // 2. When
+        val result = date.getYearAndMonth()
+        // 3. Then
+        assertThat(result, `is`("2023/01"))
+    }
 }
