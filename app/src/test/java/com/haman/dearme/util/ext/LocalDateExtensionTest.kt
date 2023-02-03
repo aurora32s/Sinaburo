@@ -17,4 +17,14 @@ internal class LocalDateExtensionTest {
         // 3. Then
         assertThat(result, `is`("2023년 2월 3일 금요일"))
     }
+
+    @Test
+    fun getDayOfWeekText_LocalDate_returnLocalDefaultDate() {
+        // 1. Given
+        val date = LocalDate.of(2023, 2, 3)
+        // 2. When
+        val result = date.dayOfWeekText()
+        // 3. Then
+        assertThat(result, `is`("금"))
+    }
 }
