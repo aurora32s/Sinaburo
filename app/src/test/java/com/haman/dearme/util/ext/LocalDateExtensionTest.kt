@@ -52,4 +52,16 @@ internal class LocalDateExtensionTest {
         // 3. Then
         assertThat(result, `is`("2023.02.03 오후 12:59"))
     }
+
+    @Test
+    fun getDateFormat_LocalDateTime_returnYYYYDDDate() {
+        // 1. Given
+        val time = LocalDateTime.of(
+            2023, 2, 3, 12, 59
+        )
+        // 2. When
+        val result = time.dateFormat()
+        // 3. Then
+        assertThat(result, `is`("2월 3일 금요일"))
+    }
 }
