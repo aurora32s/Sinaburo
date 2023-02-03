@@ -19,8 +19,6 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
-
-        buildConfigField("String", "GOOGLD_AD_BANNER", GOOGLD_AD_BANNER)
     }
 
     buildTypes {
@@ -86,4 +84,7 @@ dependencies {
 
     // googld abs
     implementation 'com.google.android.gms:play-services-ads:21.3.0'
+
+    // test
+    testImplementation "org.hamcrest:hamcrest-all:1.1"
 }
