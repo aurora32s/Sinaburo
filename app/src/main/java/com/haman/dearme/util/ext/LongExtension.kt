@@ -4,6 +4,7 @@ import java.time.Instant
 import java.time.ZoneId
 
 fun Long.fullTimeFormat(): String {
+    val result = mutableListOf<String>()
     val seconds = this / 1000
     val minutes = seconds / 60
     val hours = minutes / 60
@@ -11,15 +12,14 @@ fun Long.fullTimeFormat(): String {
     val months = days / 30
     val years = months / 12
 
-    var result = StringBuilder()
-    if (years > 0) result.append("${years}년 ")
-    if (months > 0) result.append("${months - years * 12}개월 ")
-    if (days > 0) result.append("${days - months * 30}일 ")
-    if (hours > 0) result.append("${hours - days * 24}시간 ")
-    if (minutes > 0) result.append("${minutes - hours * 60}분 ")
-    if (seconds > 0) result.append("${seconds - minutes * 60}초")
+    if (years > 0) result.add("${years}년")
+    if (months - years * 12 > 0) result.add("${months - years * 12}개월")
+    if (days - months * 30 > 0) result.add("${days - months * 30}일")
+    if (hours - days * 24 > 0) result.add("${hours - days * 24}시간")
+    if (minutes - hours * 60 > 0) result.add("${minutes - hours * 60}분")
+    if (seconds - minutes * 60 > 0) result.add("${seconds - minutes * 60}초")
 
-    return result.toString()
+    return result.joinToString(separator = " ")
 }
 
 fun Long.toLocalDateTime() =
