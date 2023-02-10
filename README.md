@@ -26,7 +26,7 @@
 #### 2. domain
 |번호|패키지명|설명|
 |-----|------------------|----------------|
-|2-1|repository|Repository Implement|
+|2-1|repository|Repository interface|
 |2-2|usecase|각 usecase 관리|
 #### 3. data
 |번호|패키지명|설명|
